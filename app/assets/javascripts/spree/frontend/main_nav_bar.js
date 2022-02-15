@@ -2,7 +2,7 @@ Spree.ready(function () {
   var $navLinks = $('.main-nav-bar .nav-link.dropdown-toggle')
   var $dropdownMenu = $('.main-nav-bar .dropdown-menu')
   var SHOW_CLASS = 'show'
-  var DATA_TOGGLE_ATTR = 'data-toggle'
+  var DATA_TOGGLE_ATTR = 'data-bs-toggle'
   var DATA_TOGGLE_VALUE = 'dropdown'
 
   function handleMouseInOutNavLinks(event) {

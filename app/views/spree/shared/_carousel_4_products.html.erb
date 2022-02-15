@@ -1,5 +1,5 @@
 <% cache [common_product_cache_keys, products&.except(:group, :order)&.maximum(:updated_at)&.to_i, id, products&.ids&.join(',')] do %>
-  <div id="<%= id.parameterize %>-mobile" class="carousel slide d-md-none homepage-carousel" data-interval="false">
+  <div id="<%= id.parameterize %>-mobile" class="carousel slide d-md-none homepage-carousel" data-bs-interval="false">
     <div class="carousel-inner">
       <% products.each_slice(2).with_index do |sliced_items, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
@@ -20,32 +20,32 @@
       class="d-flex position-absolute justify-content-center align-items-center carousel-icon-control carousel-icon-control--previous"
       href="#<%= id.parameterize %>-mobile"
       role="button"
-      data-slide="prev">
+      data-bs-slide="prev">
       <span class="d-flex justify-content-center align-items-center carousel-icon-control-rounded" aria-hidden="true">
         <%= icon(name: 'arrow-right',
                 classes: 'spree-icon-arrow spree-icon-arrow-left',
                 width: 20,
                 height: 20) %>
       </span>
-      <span class="sr-only"><%= Spree.t(:previous) %></span>
+      <span class="visually-hidden"><%= Spree.t(:previous) %></span>
     </a>
 
     <a
       class="d-flex position-absolute justify-content-center align-items-center carousel-icon-control carousel-icon-control--next"
       href="#<%= id.parameterize %>-mobile"
       role="button"
-      data-slide="next">
+      data-bs-slide="next">
       <span class="d-flex justify-content-center align-items-center carousel-icon-control-rounded" aria-hidden="true">
         <%= icon(name: 'arrow-right',
                 classes: 'spree-icon-arrow spree-icon-arrow-right',
                 width: 20,
                 height: 20) %>
       </span>
-      <span class="sr-only"><%= Spree.t(:next) %></span>
+      <span class="visually-hidden"><%= Spree.t(:next) %></span>
     </a>
   </div>
 
-  <div id="<%= id.parameterize %>-desktop" class="carousel slide d-none d-md-block homepage-carousel" data-interval="false">
+  <div id="<%= id.parameterize %>-desktop" class="carousel slide d-none d-md-block homepage-carousel" data-bs-interval="false">
     <div class="carousel-inner carousel-inner-width">
       <% products.each_slice(4).with_index do |sliced_items, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
@@ -54,14 +54,14 @@
               class="d-flex position-absolute justify-content-center align-items-center carousel-icon-control carousel-icon-control--previous"
               href="#<%= id.parameterize %>-desktop"
               role="button"
-              data-slide="prev">
+              data-bs-slide="prev">
               <span class="d-flex justify-content-center align-items-center carousel-icon-control-rounded" aria-hidden="true">
                 <%= icon(name: 'arrow-right',
                         classes: 'spree-icon-arrow spree-icon-arrow-left',
                         width: 20,
                         height: 20) %>
               </span>
-              <span class="sr-only"><%= Spree.t(:previous) %></span>
+              <span class="visually-hidden"><%= Spree.t(:previous) %></span>
             </a>
 
             <div class="row carousel-items-container">
@@ -76,14 +76,14 @@
               class="d-md-flex position-absolute justify-content-center align-items-center carousel-icon-control carousel-icon-control--next"
               href="#<%= id.parameterize %>-desktop"
               role="button"
-              data-slide="next">
+              data-bs-slide="next">
               <span class="d-flex justify-content-center align-items-center carousel-icon-control-rounded" aria-hidden="true">
                 <%= icon(name: 'arrow-right',
                         classes: 'spree-icon-arrow spree-icon-arrow-right',
                         width: 20,
                         height: 20) %>
               </span>
-              <span class="sr-only"><%= Spree.t(:next) %></span>
+              <span class="visually-hidden"><%= Spree.t(:next) %></span>
             </a>
           </div>
         </div>
