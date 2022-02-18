@@ -163,11 +163,13 @@ module Spree
 
     def plp_and_carousel_image(product, image_class = '')
       image = default_image_for_product_or_variant(product)
+      image = nil unless image.attachment.attached?
 
       image_url = if image.present?
                     main_app.url_for(image.url('plp'))
                   else
-                    asset_path('noimage/plp.svg')
+                    # asset_path('noimage/plp.svg')
+                    asset_path('noimage/product_medium.png')
                   end
 
       image_style = image&.style(:plp)
