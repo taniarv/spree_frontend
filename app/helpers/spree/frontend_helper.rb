@@ -163,7 +163,9 @@ module Spree
 
     def plp_and_carousel_image(product, image_class = '')
       image = default_image_for_product_or_variant(product)
-      image = nil unless image.attachment.attached?
+      # while developing
+      # image = nil unless image.attachment.attached?
+      image = nil unless image.try(:attachment).try(:attached?)
 
       image_url = if image.present?
                     main_app.url_for(image.url('plp'))

@@ -43,6 +43,7 @@
 
 <% unless products_empty %>
   <% cache cache_key_for_products(@products, 'json-ld') do %>
-    <%= products_structured_data(@products) %>
+    <!-- while developing -->
+    <%#= products_structured_data(@products) %>
   <% end %>
 <% end %>
