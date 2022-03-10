@@ -122,10 +122,12 @@ Spree.ready(function ($) {
       if (orderBillingRequired.is(':checked')) {
         $('#billing').show()
         $('#billing .inner input, #billing .inner select').prop('disabled', false)
+        $('#save_user_address').prop('disabled', false)
         Spree.updateState('s')
       } else {
         $('#billing').hide()
         $('#billing .inner input, #billing .inner select').prop('disabled', true)
+        $('#save_user_address').prop('disabled', true)
       }
     }
 
