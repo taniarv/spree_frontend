@@ -4,8 +4,8 @@ module Spree
     include InlineSvg::ActionView::Helpers
 
     def body_class
-      @body_class ||= content_for?(:sidebar) ? 'two-col' : 'one-col'
-      @body_class
+      # @body_class ||= content_for?(:sidebar) ? 'two-col' : 'one-col'
+      @body_class ||=''
     end
 
     def logo(image_path = nil, options = {})
@@ -130,7 +130,7 @@ module Spree
         next if msg_type.blank? || excluded_types.include?(msg_type)
 
         flashes << content_tag(:div, class: "alert alert-#{class_for(msg_type)} mb-0") do
-          content_tag(:button, '&times;'.html_safe, class: 'close', data: { dismiss: 'alert', hidden: true }) +
+          content_tag(:button, '&times;'.html_safe, class: 'close', data: { bs_dismiss: 'alert', hidden: true }) +
             content_tag(:span, text)
         end
       end

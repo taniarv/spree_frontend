@@ -49,7 +49,7 @@ Spree.url = function (uri, query) {
     uri = new Uri(uri)
   }
   if (query) {
-    $.each(query, function (key, value) {
+    jQuery.each(query, function (key, value) {
       return uri.addQueryParam(key, value)
     })
   }
@@ -59,11 +59,11 @@ Spree.url = function (uri, query) {
 Spree.ajax = function (urlOrSettings, settings) {
   var url
   if (typeof urlOrSettings === 'string') {
-    return $.ajax(Spree.url(urlOrSettings).toString(), settings)
+    return jQuery.ajax(Spree.url(urlOrSettings).toString(), settings)
   } else {
     url = urlOrSettings['url']
     delete urlOrSettings['url']
-    return $.ajax(Spree.url(url).toString(), urlOrSettings)
+    return jQuery.ajax(Spree.url(url).toString(), urlOrSettings)
   }
 }
 
