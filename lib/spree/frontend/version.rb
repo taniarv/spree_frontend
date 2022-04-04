@@ -1,6 +1,6 @@
 module Spree
   module Frontend
-    VERSION = '4.4.0.alpha.3'.freeze
+    VERSION = '4.4.0.beta.1'.freeze
 
     def self.version
       VERSION
