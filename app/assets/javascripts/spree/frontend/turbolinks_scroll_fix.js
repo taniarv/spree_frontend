@@ -33,6 +33,17 @@
 
     if (shouldScroll(scrollPosition)) {
       scrollTo(scrollPosition.scrollX, scrollPosition.scrollY)
+    } else if (location.hash) {
+      // scroll to matching named element in hash
+      var scrollElement = document.getElementById(location.hash.slice(1))
+      if(scrollElement && scrollElement.previousElementSibling){
+        //scrollElement.scrollIntoView(true);
+        // var fixHeight = document.getElementById('header').scrollHeight
+        // scrollElement.scrollTop = scrollElement.scrollHeight - fixHeight
+        scrollElement.scrollTop = scrollElement.previousElementSibling.scrollHeight
+      } else {
+        scrollTo(0, 0)
+      }
     } else {
       scrollTo(0, 0)
     }
