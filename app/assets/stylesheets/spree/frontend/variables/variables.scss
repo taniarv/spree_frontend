@@ -1,24 +1,53 @@
 // main spree variables
-$primary-color: #0074c2;
-$secondary-color: #4c4c4c;
-$primary-background: #ffffff;
-$secondary-background: #f2f2f2;
-$input-background: #ffffff;
+// $primary-color: #0074c2;
+// $secondary-color: #4c4c4c;
+// $primary-background: #ffffff;
+// $secondary-background: #f2f2f2;
+// $input-background: #ffffff;
+// $font-color: black;
+// $font-family: "Montserrat", sans-serif;
+// $header-font-color: $font-color;
+// $header-background: $primary-background;
+// $meganav-font-color: $font-color;
+// $meganav-background: $primary-background;
+// $footer-font-color: $font-color;
+// $footer-background: $primary-background;
+// $secondary-font-color: $font-color;
+// $global-border-style: #e2e2e2;
+// $second-global-border: #e2e2e2;
+// $spree-header-max-width: 1440px;
+// $spree-header-mobile-height: 50px;
+// $spree-header-tablet-height: 75px;
+// $spree-header-desktop-height: 75px;
+
 $font-color: black;
-$font-family: "Montserrat", sans-serif;
-$header-font-color: $font-color;
-$header-background: $primary-background;
+$font-family: 'Lato', sans-serif;
+
+$blue-astiberri: #69AADF;
+$grey-a: #646464;
+$grey-b: #707070;
+$grey-d: #A0A0A0;
+$grey-e: #e6e6e6;
+
+$primary-color: $blue-astiberri;
+$secondary-color: $grey-d;
+$global-border-style: $grey-b;
+$second-global-border: $grey-b;
+$primary-background: #ffffff;
+$secondary-background: $grey-d;
+$secondary-font-color: $grey-a;
+$input-background: #ffffff;
+$header-font-color: #000000;
+$header-background: #ffffff;
+$spree-header-max-width: 1440px;
+$spree-header-mobile-height: 70px;
+$spree-header-tablet-height: 70px;
+$spree-header-desktop-height: 185px;
 $meganav-font-color: $font-color;
 $meganav-background: $primary-background;
-$footer-font-color: $font-color;
-$footer-background: $primary-background;
-$secondary-font-color: $font-color;
-$global-border-style: #e2e2e2;
-$second-global-border: #e2e2e2;
-$spree-header-max-width: 1440px;
-$spree-header-mobile-height: 50px;
-$spree-header-tablet-height: 75px;
-$spree-header-desktop-height: 75px;
+$footer-font-color: #ffffff;
+$footer-background: #000000;
+
 
 // bootstrap overrides
 $grid-gutter-width: 1rem;
