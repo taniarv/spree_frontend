@@ -33,9 +33,10 @@ Spree.showProductAddedModal = function(product, variant) {
 
 Spree.hideProductAddedModal = function() {
   var modalSelector = '.product-added-modal'
-  // var $modal = $(modalSelector)
-  var bsModal = new Modal(document.querySelector(modalSelector), {})
-
-  //$modal.modal('hide')
-  bsModal.hide()
+  var $modal = $(modalSelector)
+  if ($modal.length > 0 && document.querySelector(modalSelector) != undefined) {
+    var bsModal = new Modal(document.querySelector(modalSelector), {})
+    //$modal.modal('hide')
+    bsModal.hide()
+  }
 }

@@ -332,8 +332,6 @@ Spree.ready(function($) {
   })
 
   document.addEventListener('turbolinks:request-start', function () {
-    if (typeof Spree.hideProductAddedModal === "function") {
-      Spree.hideProductAddedModal()
-    }
+    Spree.hideProductAddedModal()
   })
 })

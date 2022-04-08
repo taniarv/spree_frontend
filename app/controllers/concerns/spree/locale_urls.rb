@@ -8,8 +8,8 @@ module Spree
 
     private
 
-    def default_url_options
-      super.merge(locale: locale_param, currency: currency_param)
+    def default_url_options(options={})
+      super().merge(locale: locale_param, currency: currency_param)
     end
 
     def redirect_to_default_locale
