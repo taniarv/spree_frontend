@@ -286,7 +286,6 @@ Spree.ready(function($) {
 
   $('#product-details').on('submit', ADD_TO_CART_FORM_SELECTOR, function(event) {
     var $cartForm = $(event.currentTarget);
-    console.log($cartForm)
     var $addToCart = $cartForm.find(ADD_TO_CART_SELECTOR);
     var variantId = $cartForm.find(VARIANT_ID_SELECTOR).val();
     var quantity = parseInt($cartForm.find('[name="quantity"]').val());
