@@ -7,13 +7,6 @@ var CARD_CODE_SELECTOR = '.cardCode'
 Spree.ready(function ($) {
   Spree.onPayment = function () {
     if ($('#checkout_form_payment').length) {
-      var orderBillingRequired = $('input#order_billing_required')
-      
-      orderBillingRequired.change(function() {
-        updateBillingFormState(orderBillingRequired)
-      })
-      updateBillingFormState(orderBillingRequired)
-
       if ($('#existing_cards').length) {
         $('#payment-methods').hide()
         $('.existing-cc-radio').click(function () {
@@ -116,19 +109,6 @@ Spree.ready(function ($) {
           }
         }
       })
-    }
-    
-    function updateBillingFormState(orderUseBilling) {
-      if (orderBillingRequired.is(':checked')) {
-        $('#billing').show()
-        $('#billing .inner input, #billing .inner select').prop('disabled', false)
-        $('#save_user_address').prop('disabled', false)
-        Spree.updateState('s')
-      } else {
-        $('#billing').hide()
-        $('#billing .inner input, #billing .inner select').prop('disabled', true)
-        $('#save_user_address').prop('disabled', true)
-      }
     }
 
   }

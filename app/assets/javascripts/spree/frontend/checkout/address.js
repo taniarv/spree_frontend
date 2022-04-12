@@ -135,6 +135,13 @@ Spree.ready(function($) {
         updateShippingFormState(orderUseBilling)
       })
       updateShippingFormState(orderUseBilling)
+
+      var orderBillingRequired = $('input#order_billing_required')
+      
+      orderBillingRequired.change(function() {
+        updateBillingFormState(orderBillingRequired)
+      })
+      updateBillingFormState(orderBillingRequired)
     }
 
     function updateShippingFormState(orderUseBilling) {
@@ -150,6 +157,19 @@ Spree.ready(function($) {
 
     function getCountryId(region) {
       return $('#' + region + 'country select').val()
+    }
+
+    function updateBillingFormState(orderUseBilling) {
+      if (orderBillingRequired.is(':checked')) {
+        $('#billing').show()
+        $('#billing .inner input, #billing .inner select').prop('disabled', false)
+        $('#save_user_address').prop('disabled', false)
+        Spree.updateState('s')
+      } else {
+        $('#billing').hide()
+        $('#billing .inner input, #billing .inner select').prop('disabled', true)
+        $('#save_user_address').prop('disabled', true)
+      }
     }
   }
   Spree.onAddress()
