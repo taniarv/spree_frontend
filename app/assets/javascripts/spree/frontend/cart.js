@@ -126,6 +126,9 @@ Spree.fetchCart = function () {
     url: Spree.localizedPathFor('cart_link')
   }).done(function (data) {
     Spree.cartFetched = true
+    if ($('#link-to-cart-mobile').length > 0) {
+      $('#link-to-cart-mobile').html(data)
+    }
     return $('#link-to-cart').html(data)
   })
 }
