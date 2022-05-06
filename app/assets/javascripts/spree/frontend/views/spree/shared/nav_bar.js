@@ -19,7 +19,7 @@ Spree.ready(function($) {
       document.querySelector('.header-spree').classList.add('above-overlay')
       document.getElementById('overlay').classList.add('shown')
       searchDropdown.classList.add('shown')
-      document.querySelector('#search-dropdown input').focus()
+      document.querySelector('#search-dropdown input[type=search]').focus()
     }
   }
 })
