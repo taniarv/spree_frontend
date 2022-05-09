@@ -21,8 +21,10 @@ module Spree
     def show
       redirect_if_legacy_path
 
-      @taxon = params[:taxon_id].present? ? taxons_scope.find_by(id: params[:taxon_id]) : nil
-      @taxon = @product.taxons.first unless @taxon.present?
+      # @taxon = params[:taxon_id].present? ? taxons_scope.find_by(id: params[:taxon_id]) : nil
+      # @taxon = @product.taxons.first unless @taxon.present?
+
+      expires_in(@product.cache_expires_in, public: true)
 
       if !http_cache_enabled? || stale?(etag: etag_show, last_modified: last_modified_show, public: true)
         @product_summary = Spree::ProductSummaryPresenter.new(@product).call
@@ -56,7 +58,7 @@ module Spree
     end
 
     def load_taxon
-      @taxon = taxons_scope.find(params[:taxon]) if params[:taxon].present?
+      # @taxon = taxons_scope.find(params[:taxon]) if params[:taxon].present?
     end
 
     def can_show_product?
@@ -98,9 +100,9 @@ module Spree
       [
         store_etag,
         @product,
-        @taxon,
-        @product.possible_promotion_ids,
-        @product.possible_promotions.maximum(:updated_at),
+        # @taxon,
+        # @product.possible_promotion_ids,
+        # @product.possible_promotions.maximum(:updated_at),
       ]
     end
 
